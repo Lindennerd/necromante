@@ -9,6 +9,7 @@ router.get("/queue", async (_, res) => {
     const queues = await amqpClient.listQueues();
     res.json(queues);
   } catch (e) {
+    console.error(e);
     res.status(500).json({ error: e });
   }
 });
@@ -16,8 +17,8 @@ router.get("/queue", async (_, res) => {
 router.get("/queue/:queueName", async (req, res) => {
   try {
     const { queueName } = req.params;
-    await amqpClient.getQueue({ queueName });
-    res.json({ message: `Listening to ${queueName}` });
+    const messages = await amqpClient.getQueue({ queueName });
+    res.json({ messages });
   } catch (e) {
     res.status(500).json({ error: e });
   }
@@ -26,10 +27,10 @@ router.get("/queue/:queueName", async (req, res) => {
 router.post("/queue/:queueName", async (req, res) => {
   try {
     const { queueName } = req.params;
-    const { message } = req.body;
-    await amqpClient.publishMessage({ queueName, message });
+    await amqpClient.publishMessage({ queueName, message: req.body });
     res.json({ message: `Message sent to ${queueName}` });
   } catch (e) {
+    console.log(e);
     res.status(500).json({ error: e });
   }
 });

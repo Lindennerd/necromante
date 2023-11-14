@@ -18,6 +18,5 @@ export const publishMessage = async (
   const { channel } = ctx;
   const { queueName, message } = input;
 
-  await channel.assertQueue(queueName);
-  channel.sendToQueue(queueName, Buffer.from(message));
+  channel.publish(queueName, queueName, Buffer.from(JSON.stringify(message)));
 };

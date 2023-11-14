@@ -1,8 +1,11 @@
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import express from "express";
 import morgan from "morgan";
 import ViteExpress from "vite-express";
 import router from "./routes";
+
+dotenv.config();
 
 const app = express();
 
