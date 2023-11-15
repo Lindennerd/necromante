@@ -1,5 +1,5 @@
-import amqplib, { ConsumeMessage } from "amqplib";
-import { AMQPContext } from "../../types";
+import amqplib from "amqplib";
+import { AMQPContext, Message } from "../../types";
 import { getQueue, getQueueInput } from "./get-queue";
 import { listQueues } from "./list-queues";
 import { publishMessage, publishMessageInput } from "./publish-message";
@@ -33,8 +33,8 @@ export const amqp = () => {
   return {
     listQueues: () => withContext<void, string[]>(listQueues, undefined),
 
-    getQueue: async (input: getQueueInput): Promise<ConsumeMessage[]> => {
-      const result = await withContext<getQueueInput, ConsumeMessage[]>(
+    getQueue: async (input: getQueueInput): Promise<Message[]> => {
+      const result = await withContext<getQueueInput, Message[]>(
         getQueue,
         input
       );

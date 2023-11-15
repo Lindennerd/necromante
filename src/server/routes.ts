@@ -4,7 +4,7 @@ import { amqp } from "./amqp";
 const router = Router();
 const amqpClient = amqp();
 
-router.get("/queue", async (_, res) => {
+router.get("/queue/list", async (_, res) => {
   try {
     const queues = await amqpClient.listQueues();
     res.json(queues);
