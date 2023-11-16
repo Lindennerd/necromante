@@ -15,10 +15,10 @@ export const MessageView = ({ message }: { message: Message }) => {
   }
 
   return (
-    <div className="space-y-2 rounded bg-white p-2">
+    <div className="space-y-2 rounded bg-purple-200 p-2">
       <div className="flex justify-end w-full">
         <button
-          className="bg-purple-200 rounded hover:bg-purple-400 px-2"
+          className="bg-purple-300 rounded hover:bg-purple-400 px-2"
           onClick={(e) => handleRessusitate()}
         >
           Ressucitar

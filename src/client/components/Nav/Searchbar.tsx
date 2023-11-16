@@ -28,7 +28,7 @@ export const SearchBar = () => {
       <input
         type="text"
         placeholder="Search"
-        className="outline-none border rounded p-2 border-gray-200 w-full"
+        className="outline-none border rounded p-2 border-purplr-500 w-full"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -43,7 +43,7 @@ export const SearchBar = () => {
       )}
       <button
         type="submit"
-        className="p-2 hover:bg-gray-200 rounded-full absolute right-3 top-1/2 transform -translate-y-1/2"
+        className="p-2 hover:bg-purple-200 rounded-full absolute right-3 top-1/2 transform -translate-y-1/2"
       >
         <FaSearch />
       </button>

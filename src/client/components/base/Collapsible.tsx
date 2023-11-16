@@ -11,14 +11,18 @@ export const Collapsible = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded">
+    <div className="border border-purple-300 rounded">
       <div
         className="flex justify-between items-center p-2 cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         <div className="text-xl">{title}</div>
         <div className="text-xl">
-          {open ? <FaChevronUp /> : <FaChevronDown />}
+          {open ? (
+            <FaChevronUp className="text-purple-500" />
+          ) : (
+            <FaChevronDown className="text-purple-500" />
+          )}
         </div>
       </div>
       {open && <div className="p-2">{children}</div>}

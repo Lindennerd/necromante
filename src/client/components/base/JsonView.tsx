@@ -6,11 +6,11 @@ export const JsonView = ({ data }: { data: any }) => {
   }
 
   return (
-    <div className="p-2 text-xs bg-gray-200 rounded flex justify-between items-start">
+    <div className="p-2 text-xs bg-purple-300 rounded flex justify-between items-start">
       <pre className="">{JSON.stringify(data, null, 4)}</pre>
       <div>
         <button onClick={() => handleCopy()}>
-          <FaCopy className="hover:text-gray-500" />
+          <FaCopy className="hover:text-purple-700 text-purple-500" />
         </button>
       </div>
     </div>
