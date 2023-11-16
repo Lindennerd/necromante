@@ -24,7 +24,7 @@ export const QueueInput = () => {
       />
       <button
         type="submit"
-        className="p-2 bg-gray-200 rounded hover:bg-gray-400"
+        className="p-2 bg-purple-200 rounded hover:bg-purple-400"
       >
         Exumar
       </button>

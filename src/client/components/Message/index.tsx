@@ -18,7 +18,7 @@ export const MessageView = ({ message }: { message: Message }) => {
     <div className="space-y-2 rounded bg-white p-2">
       <div className="flex justify-end w-full">
         <button
-          className="bg-gray-200 rounded hover:bg-gray-400 px-2"
+          className="bg-purple-200 rounded hover:bg-purple-400 px-2"
           onClick={(e) => handleRessusitate()}
         >
           Ressucitar
