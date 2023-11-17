@@ -10,3 +10,7 @@ export type Message = {
   properties: ConsumeMessage["properties"];
   content: string;
 };
+
+export type Queue = {
+  messages: Message[];
+};

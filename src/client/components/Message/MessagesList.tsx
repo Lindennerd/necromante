@@ -7,9 +7,11 @@ export const MessagesList = () => {
 
   if (!queue || !queue.messages.length)
     return (
-      <div className="flex justify-center w-full bg-purple-200 p-8 rounded text-xl font-thin">
-        <span>Selecione alguma fila para visualizar</span>
-      </div>
+      <>
+        <div className="flex justify-center w-full bg-purple-200 p-8 rounded text-xl font-thin">
+          <span>Selecione alguma fila para visualizar</span>
+        </div>
+      </>
     );
 
   return (

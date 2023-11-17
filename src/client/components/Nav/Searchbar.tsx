@@ -21,31 +21,28 @@ export const SearchBar = () => {
   }
 
   return (
-    <form
-      className="flex flex-1 mx-4 gap-2 mt-1 relative w-full"
-      onSubmit={handleSearch}
-    >
+    <form className="flex mx-4 gap-2 mt-1 relative" onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Search"
-        className="outline-none border rounded p-2 border-purplr-500 w-full"
+        className="outline-none border rounded p-2 border-purplr-500"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       {search && (
         <button
           type="button"
-          className="absolute right-10 top-1/2 transform -translate-y-1/2 p-2 hover:bg-gray-200 rounded-full"
+          className="absolute right-10 top-1/2 transform -translate-y-1/2 p-2 hover:bg-purple-200 rounded-full"
           onClick={clearSearch}
         >
-          <FaBackspace />
+          <FaBackspace className="text-purple-700" />
         </button>
       )}
       <button
         type="submit"
         className="p-2 hover:bg-purple-200 rounded-full absolute right-3 top-1/2 transform -translate-y-1/2"
       >
-        <FaSearch />
+        <FaSearch className="text-purple-700" />
       </button>
     </form>
   );
